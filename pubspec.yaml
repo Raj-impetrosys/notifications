@@ -1,11 +1,11 @@
 name: notification_list
-description: A new Flutter project.
-version: 0.0.2
+description: A flutter package that help developers to show a list of content by only passing list of title and image link
+version: 1.0.0
 homepage: "https://github.com/Rajkumar07793/notifications"
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
-  flutter: ">=1.17.0"
+  sdk: ">=2.12.0 <4.0.0"
+  flutter: ">=3.19.0"
 
 dependencies:
   flutter:

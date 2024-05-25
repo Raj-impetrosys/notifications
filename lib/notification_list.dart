@@ -1,11 +1,13 @@
 library notifications;
 
 import 'package:flutter/material.dart';
+import 'package:notification_list/model/notification_model.dart';
 
 class Notifications extends StatelessWidget {
-  final List<Map<String, String>> notifications;
+  final List<NotificationModel> notifications;
 
-  const Notifications({Key key, this.notifications}) : super(key: key);
+  const Notifications({Key? key, required this.notifications})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,7 @@ class Notifications extends StatelessWidget {
               margin: EdgeInsets.all(5),
               padding: EdgeInsets.only(left: 0),
               child: ListTile(
-                onTap: () {},
+                onTap: notifications[index].onTap,
                 contentPadding: EdgeInsets.all(10),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
@@ -33,11 +35,11 @@ class Notifications extends StatelessWidget {
                   height: 100,
                   width: 100,
                   child: Image.network(
-                    notifications[index]["image"],
+                    notifications[index].image,
                     fit: BoxFit.fill,
                   ),
                 ),
-                title: Text(notifications[index]["title"]),
+                title: Text(notifications[index].title),
               ),
             ),
           ),
